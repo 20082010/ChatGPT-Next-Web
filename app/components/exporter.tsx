@@ -226,7 +226,7 @@ export function MessageExporter() {
               ))}
             </Select>
           </ListItem>
-          <ListItem
+{/*         <ListItem
             title={Locale.Export.IncludeContext.Title}
             subTitle={Locale.Export.IncludeContext.SubTitle}
           >
@@ -239,7 +239,7 @@ export function MessageExporter() {
                 );
               }}
             ></input>
-          </ListItem>
+          </ListItem>*/}
         </List>
         <MessageSelector
           selection={selection}
@@ -539,9 +539,9 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>NextChat</div>
+            <div className={styles["main-title"]}>小布康康-你的就医向导</div>
             <div className={styles["sub-title"]}>
-              github.com/ChatGPTNextWeb/ChatGPT-Next-Web
+              让中国家庭享受到优质医疗资源与服务！
             </div>
             <div className={styles["icons"]}>
               <ExportAvatar avatar={config.avatar} />

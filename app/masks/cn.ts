@@ -441,5 +441,5 @@ export const CN_MASKS: BuiltinMask[] = [
     lang: "cn",
     builtin: true,
     createdAt: 1688899480537,
-  },
+  }, 
 ];

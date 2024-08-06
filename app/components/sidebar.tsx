@@ -225,11 +225,11 @@ export function SideBar(props: { className?: string }) {
       {...props}
     >
       <SideBarHeader
-        title="NextChat"
-        subTitle="Build your own AI assistant."
+        title="小布康康-你的就医向导"
+        subTitle="让中国家庭享受到优质医疗资源与服务！"
         logo={<ChatGptIcon />}
       >
-        <div className={styles["sidebar-header-bar"]}>
+       {/*  <div className={styles["sidebar-header-bar"]}>
           <IconButton
             icon={<MaskIcon />}
             text={shouldNarrow ? undefined : Locale.Mask.Name}
@@ -271,7 +271,7 @@ export function SideBar(props: { className?: string }) {
               navigate(s[0], { state: { fromHome: true } });
             }}
           />
-        )}
+        )}*/} 
       </SideBarHeader>
       <SideBarBody
         onClick={(e) => {
@@ -295,7 +295,7 @@ export function SideBar(props: { className?: string }) {
                 }}
               />
             </div>
-            <div className={styles["sidebar-action"]}>
+            {/*  <div className={styles["sidebar-action"]}>
               <Link to={Path.Settings}>
                 <IconButton icon={<SettingsIcon />} shadow />
               </Link>
@@ -304,7 +304,7 @@ export function SideBar(props: { className?: string }) {
               <a href={REPO_URL} target="_blank" rel="noopener noreferrer">
                 <IconButton icon={<GithubIcon />} shadow />
               </a>
-            </div>
+            </div>*/}
           </>
         }
         secondaryAction={

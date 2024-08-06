@@ -7,8 +7,8 @@ const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
     Unauthorized: isApp
-      ? "检测到无效 API Key，请前往[设置](/#/settings)页检查 API Key 是否配置正确。"
-      : "访问密码不正确或为空，请前往[登录](/#/auth)页输入正确的访问密码，或者在[设置](/#/settings)页填入你自己的 OpenAI API Key。",
+      ? "检测到无效 【令牌】，请前往[小布康康统一账号管理](https://one.buruzhaowo.com)检查 【令牌】 是否配置正确。"
+      : "你好，我是你的就医向导，您可以直接提问，但首先需要确保你已经导入了有效 【令牌】 。快捷入口：[小布康康统一账号管理](https://one.buruzhaowo.com)",
   },
   Auth: {
     Title: "需要密码",
@@ -26,14 +26,14 @@ const cn = {
     EditMessage: {
       Title: "编辑消息记录",
       Topic: {
-        Title: "聊天主题",
-        SubTitle: "更改当前聊天主题",
+        Title: "咨询主题",
+        SubTitle: "更改当前咨询主题",
       },
     },
     Actions: {
       ChatList: "查看消息列表",
       CompressedHistory: "查看压缩后的历史 Prompt",
-      Export: "导出聊天记录",
+      Export: "导出咨询记录",
       Copy: "复制",
       Stop: "停止",
       Retry: "重试",
@@ -44,12 +44,12 @@ const cn = {
       Edit: "编辑",
     },
     Commands: {
-      new: "新建聊天",
-      newm: "从面具新建聊天",
-      next: "下一个聊天",
-      prev: "上一个聊天",
+      new: "新建咨询",
+      newm: "从面具新建咨询",
+      next: "下一个咨询",
+      prev: "上一个咨询",
       clear: "清除上下文",
-      del: "删除聊天",
+      del: "删除咨询",
     },
     InputActions: {
       Stop: "停止响应",
@@ -61,7 +61,7 @@ const cn = {
       },
       Prompt: "快捷指令",
       Masks: "所有面具",
-      Clear: "清除聊天",
+      Clear: "清除咨询",
       Settings: "对话设置",
       UploadImage: "上传图片",
     },
@@ -72,7 +72,8 @@ const cn = {
       if (submitKey === String(SubmitKey.Enter)) {
         inputHints += "，Shift + Enter 换行";
       }
-      return inputHints + "，/ 触发补全，: 触发命令";
+      return inputHints;
+      //return inputHints + "，/ 触发补全，: 触发命令";
     },
     Send: "发送",
     Config: {
@@ -82,7 +83,7 @@ const cn = {
     IsContext: "预设提示词",
   },
   Export: {
-    Title: "分享聊天记录",
+    Title: "分享咨询记录",
     Copy: "全部复制",
     Download: "下载文件",
     Share: "分享到 ShareGPT",
@@ -118,15 +119,15 @@ const cn = {
   Memory: {
     Title: "历史摘要",
     EmptyContent: "对话内容过短，无需总结",
-    Send: "自动压缩聊天记录并作为上下文发送",
+    Send: "自动压缩咨询记录并作为上下文发送",
     Copy: "复制摘要",
     Reset: "[unused]",
     ResetConfirm: "确认清空历史摘要？",
   },
   Home: {
-    NewChat: "新的聊天",
+    NewChat: "新的咨询",
     DeleteChat: "确认删除选中的对话？",
-    DeleteToast: "已删除会话",
+    DeleteToast: "已删除咨询",
     Revert: "撤销",
   },
   Settings: {
@@ -142,9 +143,9 @@ const cn = {
       },
       Clear: {
         Title: "清除所有数据",
-        SubTitle: "清除所有聊天、设置数据",
+        SubTitle: "清除所有咨询、设置数据",
         Action: "立即清除",
-        Confirm: "确认清除所有聊天、设置数据？",
+        Confirm: "确认清除所有咨询、设置数据？",
       },
     },
     Lang: {
@@ -154,11 +155,11 @@ const cn = {
     Avatar: "头像",
     FontSize: {
       Title: "字体大小",
-      SubTitle: "聊天内容的字体大小",
+      SubTitle: "咨询内容的字体大小",
     },
     FontFamily: {
-      Title: "聊天字体",
-      SubTitle: "聊天内容的字体，若置空则应用全局默认字体",
+      Title: "咨询字体",
+      SubTitle: "咨询内容的字体，若置空则应用全局默认字体",
       Placeholder: "字体名称",
     },
     InjectSystemPrompts: {
@@ -235,7 +236,7 @@ const cn = {
     Mask: {
       Splash: {
         Title: "面具启动页",
-        SubTitle: "新建聊天时，展示面具启动页",
+        SubTitle: "新建咨询时，展示面具启动页",
       },
       Builtin: {
         Title: "隐藏内置面具",
@@ -465,11 +466,11 @@ const cn = {
     },
   },
   Store: {
-    DefaultTopic: "新的聊天",
-    BotHello: "有什么可以帮你的吗",
+    DefaultTopic: "新的咨询",
+    BotHello: "你好，我是你的就医向导，您可以直接提问，但首先需要确保你已经导入了有效 【令牌】 。快捷入口：[小布康康统一账号管理](https://one.buruzhaowo.com)",
     Error: "出错了，稍后重试吧",
     Prompt: {
-      History: (content: string) => "这是历史聊天总结作为前情提要：" + content,
+      History: (content: string) => "这是历史咨询总结作为前情提要：" + content,
       Topic:
         "使用四到五个字直接返回这句话的简要主题，不要解释、不要标点、不要语气词、不要多余文本，不要加粗，如果没有主题，请直接返回“闲聊”",
       Summarize:
@@ -533,7 +534,7 @@ const cn = {
       },
       HideContext: {
         Title: "隐藏预设对话",
-        SubTitle: "隐藏后预设对话不会出现在聊天界面",
+        SubTitle: "隐藏后预设对话不会出现在咨询界面",
       },
       Share: {
         Title: "分享此面具",
